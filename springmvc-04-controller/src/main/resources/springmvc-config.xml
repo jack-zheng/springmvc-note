@@ -12,10 +12,10 @@
 <!--    <mvc:annotation-driven/>-->
 
     <!-- 视图解析器: 模板引擎 Thymeleaf, Freemaker 等 -->
-<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-<!--        <property name="prefix" value="/WEB-INF/jsp/"/>-->
-<!--        <property name="suffix" value=".jsp"/>-->
-<!--    </bean>-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 
 <!--    <bean name="/t1" class="com.jzheng.controller.ControllerTest1"/>-->
 </beans>
