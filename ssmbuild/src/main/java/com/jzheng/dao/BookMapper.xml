@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jzheng.dao.BookMapper">
     <insert id="addBook" parameterType="Books">
-        insert into ssmbuild.books (bookName, bookCount, detail)
-        values (#{bookName}, #{bookCount}, #{detail});
+        insert into ssmbuild.books (bookName, bookCounts, detail)
+        values (#{bookName}, #{bookCounts}, #{detail});
     </insert>
 
     <delete id="deleteBookById" parameterType="int">
@@ -14,7 +14,7 @@
 
     <update id="updateBook" parameterType="Books">
         update ssmbuild.books
-        set bookName=#{bookName}, bookCount=#{bookCount}, detail=#{detail}
+        set bookName=#{bookName}, bookCounts=#{bookCounts}, detail=#{detail}
         where bookID=#{bookID};
     </update>
 
@@ -26,6 +26,10 @@
 
     <select id="queryAllBooks" resultType="Books">
         select * from ssmbuild.books;
+    </select>
+
+    <select id="queryBookByName" resultType="Books">
+        select * from ssmbuild.books where bookName like concat(concat('%',#{bookName}),'%')
     </select>
 
 </mapper>

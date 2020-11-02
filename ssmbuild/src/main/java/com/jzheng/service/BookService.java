@@ -1,6 +1,7 @@
 package com.jzheng.service;
 
 import com.jzheng.pojo.Books;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface BookService {
 
     // queryAll
     List<Books> queryAllBooks();
+
+    List<Books> queryBookByName(@Param("bookName")String bookName);
 }

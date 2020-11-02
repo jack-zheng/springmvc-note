@@ -20,4 +20,7 @@ public interface BookMapper {
 
     // queryAll
     List<Books> queryAllBooks();
+
+    //模糊查询
+    List<Books> queryBookByName(@Param("bookName")String bookName);
 }
